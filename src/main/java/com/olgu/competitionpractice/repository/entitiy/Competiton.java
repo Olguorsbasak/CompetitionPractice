@@ -1,4 +1,6 @@
 package com.olgu.competitionpractice.repository.entitiy;
+import com.olgu.competitionpractice.repository.enums.CompetitonStatus;
+import com.olgu.competitionpractice.repository.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +19,21 @@ public class Competiton {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
+    Long competitonOwner_id;
+    String competitonHeader;
+    String competitonDes;
+    String img;
+    int numberofWinner;
+
+    @Enumerated(EnumType.STRING) // buranın bu şekilde yazımı enum sınıfından aldığından buradaki yazılan şekliyle geri döndürür. Sayılar ile değil.
+    CompetitonStatus competitonStatus = CompetitonStatus.ACTIVE_PARTICIPATION_OPEN;
+     @Enumerated(EnumType.STRING)
+     State state= State.PENDING_APPROVAL;
+
+     @Embedded
+     TableAdd tableAdd;
+
 
     @OneToMany(mappedBy = "competiton") //OneToMany-> mappedBy ve list döndürmeli
     List <User> userList;

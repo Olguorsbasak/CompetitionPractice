@@ -1,6 +1,7 @@
 package com.olgu.competitionpractice.repository.entitiy;
 
 
+import com.olgu.competitionpractice.repository.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,9 +18,17 @@ import javax.persistence.*;
     public class Answer {
 
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE)
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         Long id;
+        Long question_id;
+        @Column(length = 1000)
         String answer;
+        boolean isTrue;
+        @Enumerated(EnumType.STRING)
+        State state = State.APPROVAL;
+        @Embedded
+        TableAdd tableAdd;
+
         @OneToOne
         @JoinColumn(name = "question", referencedColumnName = "id") //her sorunun bir cevabı var.
                                                                     //OneToOne(joincolumn yada mapped by)

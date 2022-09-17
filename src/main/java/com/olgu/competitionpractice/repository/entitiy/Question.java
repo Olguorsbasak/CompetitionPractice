@@ -1,4 +1,5 @@
 package com.olgu.competitionpractice.repository.entitiy;
+import com.olgu.competitionpractice.repository.enums.State;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,10 +15,21 @@ import javax.persistence.*;
 @Entity
 public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(length=1000)
     String question;
-    @OneToOne(mappedBy = "question")//bir sorununbir cevabı var
+    Long duration;
+    Long owner_id;
+    int numberofAnswer;
+    String groupName;
+    @Enumerated(EnumType.STRING)
+    State state = State.PENDING_APPROVAL;
+
+    @Embedded
+    TableAdd tableAdd;
+
+    @OneToOne(mappedBy = "question")//bir sorunun bir cevabı var
     Answer answer;
 
 
@@ -28,5 +40,10 @@ public class Question {
     @ManyToOne
     @JoinColumn(name = "competiton", referencedColumnName = "id")
     Competiton competition;//yarışmaya ait bir çok soru var.JoınColumn
+
+
+
+
+
 
 }

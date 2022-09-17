@@ -1,6 +1,12 @@
 package com.olgu.competitionpractice.repository;
 
+import com.olgu.competitionpractice.repository.entitiy.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository {
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository <User,Long>{
+    Optional<User> findByUsernameAndPassword(String username, String password);
 }

@@ -1,5 +1,6 @@
 package com.olgu.competitionpractice.repository.entitiy;
 
+import com.olgu.competitionpractice.repository.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,18 +20,17 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    @Column( name = "name", length = 300)
-    String name;
-    @Column( name = "lname", length = 300)
-    String lName;
-    @Column( name = "password", length = 10)
+    String username;
     String password;
     @Enumerated(EnumType.STRING)
-    UserRole userRole;
+    UserRole userRole= UserRole.USER;
+    @Embedded
+    TableAdd tableAdd;
+
     @OneToMany(mappedBy = "questionCreator")
     List<Question> questionList; //bir user birden fazla soru oluşturabilir
     @ManyToOne
     @JoinColumn(name = "competiton", referencedColumnName = "id")
-    Competiton competition;
+    Competiton competiton;
 
 }
