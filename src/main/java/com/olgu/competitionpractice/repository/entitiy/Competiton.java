@@ -30,22 +30,13 @@ public class Competiton {
     CompetitonStatus competitonStatus = CompetitonStatus.ACTIVE_PARTICIPATION_OPEN;
      @Enumerated(EnumType.STRING)
      State state= State.PENDING_APPROVAL;
-
      @Embedded
      TableAdd tableAdd;
+     @Transient
+     List<Question> questionList;
+    @Transient
+    List<User> participationList;
 
 
-    @OneToMany(mappedBy = "competiton") //OneToMany-> mappedBy ve list döndürmeli
-    List <User> userList;
 
-
-    @OneToMany (mappedBy = "question")
-    List<Question> questionList;
-
-    @OneToMany (mappedBy = "answer")
-    List<Answer> answerList;
-
-    @OneToOne
-    @JoinColumn(name = "answer", referencedColumnName = "answer") //bir yarışmanın bir cevabı var.
-    Answer answer;
 }

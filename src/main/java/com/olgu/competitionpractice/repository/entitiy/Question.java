@@ -29,18 +29,6 @@ public class Question {
     @Embedded
     TableAdd tableAdd;
 
-    @OneToOne(mappedBy = "question")//bir sorunun bir cevabı var
-    Answer answer;
-
-
-    @ManyToOne
-    @JoinColumn(name = "question_creator", referencedColumnName = "id") //bir user birden fazla soru oluşturabilir.Join column.
-    User questionCreator;
-
-    @ManyToOne
-    @JoinColumn(name = "competiton", referencedColumnName = "id")
-    Competiton competition;//yarışmaya ait bir çok soru var.JoınColumn
-
 
 
 

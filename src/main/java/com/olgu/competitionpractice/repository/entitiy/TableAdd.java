@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class TableAdd {
-    State state;
+
     long createDate;
     long updateDate;
 }

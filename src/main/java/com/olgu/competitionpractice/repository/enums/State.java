@@ -14,6 +14,8 @@ import lombok.NoArgsConstructor;
         APPROVAL(2),
         DELETED(3),
         BLOCK(4);
+
+
         private int value;
 
     }

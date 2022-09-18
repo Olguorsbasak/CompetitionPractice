@@ -22,15 +22,12 @@ public class User {
     Long id;
     String username;
     String password;
+    String nameSurname;
     @Enumerated(EnumType.STRING)
     UserRole userRole= UserRole.USER;
     @Embedded
     TableAdd tableAdd;
 
-    @OneToMany(mappedBy = "questionCreator")
-    List<Question> questionList; //bir user birden fazla soru oluşturabilir
-    @ManyToOne
-    @JoinColumn(name = "competiton", referencedColumnName = "id")
-    Competiton competiton;
+
 
 }

@@ -29,11 +29,5 @@ import javax.persistence.*;
         @Embedded
         TableAdd tableAdd;
 
-        @OneToOne
-        @JoinColumn(name = "question", referencedColumnName = "id") //her sorunun bir cevabı var.
-                                                                    //OneToOne(joincolumn yada mapped by)
-        Question question;
 
-        @OneToOne (mappedBy = "answer") //diğer kullanımda bu şekilde
-        Competiton competiton;
 }

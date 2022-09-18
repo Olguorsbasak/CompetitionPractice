@@ -20,7 +20,6 @@ public class DegreeList {
     Long id;
     Long user_id;
     Long competiton_id;
-
     int point;
     int sequence;
     @Enumerated

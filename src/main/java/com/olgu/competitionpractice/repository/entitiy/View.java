@@ -12,10 +12,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Builder
 @Data
-@Table(name="tbl_view")
 @Entity
+@Table(name="tbl_view")
 public class View {
-
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     Long id;
@@ -23,7 +22,7 @@ public class View {
     Long question_id;
     Long date;
     @Enumerated(EnumType.STRING)
-    State state;
+    State state =State.APPROVAL;
     @Embedded
     TableAdd tableAdd;
 
