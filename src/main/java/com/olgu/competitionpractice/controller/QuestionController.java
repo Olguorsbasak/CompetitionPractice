@@ -19,7 +19,7 @@ public class QuestionController {
     public ModelAndView addQuestion(){
         ModelAndView model = new ModelAndView();
         model.addObject("userid",1);
-        model.setViewName("creatorQuestion");
+        model.setViewName("soruolusturma");
         return model;
     }
 

@@ -16,7 +16,7 @@ public class QuestionService extends ServiceManager <Question,Long>{
         this.answerService = answerService;
     }
 
-    public void addQuestion(AddQuestionRequestDto dto){
+    public void addQues(AddQuestionRequestDto dto){
         /**
          * Soruyu kayıt ediyor.
          */
@@ -24,14 +24,14 @@ public class QuestionService extends ServiceManager <Question,Long>{
                 .question(dto.getQuestion().getQuestionContent())
                 .numberofAnswer(dto.getQuestion().getNumberofAnswer())
                 .duration(dto.getQuestion().getDuration())
-                .creator_id(dto.getQuestion().getCreatorId()
-                .build()));
+                .owner_id(dto.getQuestion().getCreator_id())
+                .build());
         /**
          * cevapları kayıt etmeniz gerekli.
          * 1. cevap kayıt edebnilmeniz için soru idsine ihtiyaç var
          * 2. bir sorunun en az 2 cevabı(şıkkı) olmalı
          */
-        answerService.addAnswerofQuestion(dto.getAnswer(),question.getId());
+        answerService.addAnswerofQuestion(dto.getAnswers(),question.getId());
     }
 
 }

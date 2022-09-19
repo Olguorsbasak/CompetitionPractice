@@ -18,11 +18,11 @@ public class AnswerService extends ServiceManager<Answer,Long> {
         this.answerRepository=answerRepository;
     }
     public void addAnswerofQuestion(List<AnswerRequestDto> dto, Long questionId){
-        dto.forEach(answer->{
+        dto.forEach(answers->{
             save(Answer.builder()
                     .question_id(questionId)
-                    .isTrue(answer.isTrue())
-                    .answer(answer.getQuestionContent())
+                    .isTrue(answers.isAnswerTrue())
+                    .answer(answers.getAnswerContent())
                     .build());
         });
     }

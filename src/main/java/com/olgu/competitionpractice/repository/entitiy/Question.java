@@ -19,7 +19,7 @@ public class Question {
     Long id;
     @Column(length=1000)
     String question;
-    Long duration;
+   int duration;
     Long owner_id;
     int numberofAnswer;
     String groupName;
