@@ -7,6 +7,6 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class TableAdd {
 
-    long createDate;
-    long updateDate;
+    Long createDate;
+    Long updateDate;
 }
