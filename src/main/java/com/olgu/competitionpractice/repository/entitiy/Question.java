@@ -24,6 +24,7 @@ public class Question {
     int numberofAnswer;
     String groupName;
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     State state = State.PENDING_APPROVAL;
 
     @Embedded

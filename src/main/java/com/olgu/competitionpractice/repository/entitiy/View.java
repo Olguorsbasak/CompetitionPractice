@@ -22,6 +22,7 @@ public class View {
     Long question_id;
     Long date;
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     State state =State.APPROVAL;
     @Embedded
     TableAdd tableAdd;

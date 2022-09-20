@@ -25,6 +25,7 @@ import javax.persistence.*;
         String answer;
         boolean isTrue;
         @Enumerated(EnumType.STRING)
+        @Builder.Default
         State state = State.APPROVAL;
         @Embedded
         TableAdd tableAdd;

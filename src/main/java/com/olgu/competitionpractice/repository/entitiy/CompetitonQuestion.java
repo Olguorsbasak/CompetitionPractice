@@ -23,7 +23,9 @@ public class CompetitonQuestion {
     Long question_id;
     Long competiton_id;
     Long duration;
-    @Enumerated(EnumType.STRING) /**  Enumtype string verildiğinde sayı olarak değil string olarak belirtilenler döner*/
+    @Enumerated(EnumType.STRING)
+    /**  Enumtype string verildiğinde sayı olarak değil string olarak belirtilenler döner*/
+    @Builder.Default
     State state= State.APPROVAL;
     @Embedded
     TableAdd tableAdd; /** Table add classında yazılanlar burada embedded anotasyonu ile çağrılır.  */

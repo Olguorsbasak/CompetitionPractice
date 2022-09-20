@@ -23,6 +23,7 @@ public class DegreeList {
     int point;
     int sequence;
     @Enumerated
+    @Builder.Default
     State state = State.APPROVAL;
     @Embedded
     TableAdd tableAdd;

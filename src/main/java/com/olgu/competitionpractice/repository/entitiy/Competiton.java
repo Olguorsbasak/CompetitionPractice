@@ -26,9 +26,12 @@ public class Competiton {
     String img;
     int numberofWinner;
 
-    @Enumerated(EnumType.STRING) // buranın bu şekilde yazımı enum sınıfından aldığından buradaki yazılan şekliyle geri döndürür. Sayılar ile değil.
+    @Enumerated(EnumType.STRING)
+    // buranın bu şekilde yazımı enum sınıfından aldığından buradaki yazılan şekliyle geri döndürür. Sayılar ile değil.
+    @Builder.Default
     CompetitonStatus competitonStatus = CompetitonStatus.ACTIVE_PARTICIPATION_OPEN;
      @Enumerated(EnumType.STRING)
+     @Builder.Default
      State state= State.PENDING_APPROVAL;
      @Embedded
      TableAdd tableAdd;

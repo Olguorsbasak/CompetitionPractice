@@ -24,6 +24,7 @@ public class User {
     String password;
     String nameSurname;
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     UserRole userRole= UserRole.USER;
     @Embedded
     TableAdd tableAdd;

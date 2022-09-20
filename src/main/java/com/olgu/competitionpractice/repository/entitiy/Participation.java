@@ -23,6 +23,7 @@ public class Participation {
     Long competiton_id;
     Long date;
     @Enumerated(EnumType.STRING)
+    @Builder.Default
     ParticipationStatus participationStatus=ParticipationStatus.UNAPPROVED;
     @Embedded
     TableAdd tableAdd;
