@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class QuestionRequestDto {
     private String questionContent;
     private int duration;
-    private long creator_id;
+    private Long creator_id;
     private int numberofAnswer;
 
 }
